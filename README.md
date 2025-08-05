@@ -1,6 +1,6 @@
 # Matching Tiles
 
-## <b> [Click here to Play the GAME](https://void-kbadhon.github.io/Matching_Tiles/)
+## <b> [Click here to play the GAME](https://void-kbadhon.github.io/Matching_Tiles/)
 
 
 This project is made using HTML, CSS &amp; JavaScript.

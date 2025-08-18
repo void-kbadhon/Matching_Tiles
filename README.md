@@ -1,9 +1,9 @@
 # Matching Tiles
 
-## <b> [Click here to play the GAME](https://void-kbadhon.github.io/Matching_Tiles/)
+## <b> [Click here to Play the GAME!!]()
 
 
-This project is made using HTML, CSS &amp; JavaScript.
+This project is made using HTML,CSS &amp; JavaScript.
 
 An online memory "Matching Tiles" game.
 <br>

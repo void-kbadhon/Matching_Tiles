@@ -1,219 +1,203 @@
-    @font-face {
+@font-face {
     font-family: 'D-DINCondensed';
     src: url('fonts/D-DINCondensed.otf') format('truetype');
 }
 * {
     font-family: 'D-DINCondensed', sans-serif;
+    box-sizing: border-box;
 }
-html {
-    width:100vw;
+html, body {
+    margin:0;
+    padding:0;
     height:100%;
-}
-body {
-    font-family: 'D-DINCondensed', sans-serif;
-    margin:0px;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#4481eb), to(#04bedd));
-    background-image: -o-linear-gradient(top, #4481eb 0%, #04bedd 100%);
-    background: linear-gradient(to bottom, #121212, #2c2c2c);
-}
-
-p {
-    font-size: 60px;
-    margin-top:5px;
-}
-td {
-    background-color: transparent;
-    height:70px;
-    width:70px;
-    animation: fadeIn 0.5s ease-in;
-}
-@keyframes fadeIn {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-td, .inner, .front, .back {
-    border-radius: 4px;
-}
-table {
-    margin-top: 80px;
-}
-
-#inst {
-    width: 85vw;
-    background-color: rgba(255,255,255,0.1);
-    text-align: center;
-    margin-top:16vh;
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-    border: 0.2px solid #ffff;
-    border-radius: 10px;
-    padding: 5px;
-}
-#inst li {
-    text-align: left;
-    padding: 5px;
-}
-
-button {
-    background-color: rgba(255,255,255,0.2);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    width:100%;
+    background: linear-gradient(135deg, #1e1e2f, #2c2c54);
     color: white;
-    margin: 5px;
-    border: 0.1px solid #ffff;
-    border-radius: 10px;
-    font-weight:normal;
-    width:100px;
-    font-size:26px;
-    padding:5px;
+    transition: background 0.5s, color 0.5s;
 }
-
-#ol {
-    position: absolute;
-    height:100vh;
-    width:100vw;
-    background-color: rgba(0,0,200,0.1);
-    color: white;
-    -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-    z-index:2;
-    
-}
-#iol {
-    text-align: center;
-    position: absolute;
-    width: 100vw;
-    top: 35vw;
+body.light {
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    color: #222;
 }
 
 #title {
-    background-color: rgba(255,255,255,0.25);
-    -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
-    border-radius:10px;
-    margin: 8px;
-    margin-top:0px;
-    color: white;
-    height:56px;
-    text-align: center;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    margin: 10px;
+    padding: 10px 20px;
 }
-
-#time {
-    position: absolute;
-    right: 20px;
-    font-size: 26px;
-    top: 8.5px;
-}
-
-#moves {
-    position: absolute;
-    left: 20px;
-    font-size: 26px;
-    top:8.5px;
-}
-
 #logo {
-    font-size: 32px;
-    padding-top: 10px;
-    display: block;
+    font-size: 35px;
+    font-weight:bold;
+}
+#controls button {
+    margin-left: 10px;
+    font-size: 18px;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    color: inherit;
+}
+#controls button:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.05);
+    transition: 0.2s;
 }
 
+#hud {
+    display:flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+    font-size: 20px;
+}
+
+#progressBarContainer {
+    width: 90%;
+    height: 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
+}
+#progressBar {
+    height:100%;
+    width:0%;
+    background: limegreen;
+    border-radius:10px;
+    transition: width 0.3s;
+}
+
+table {
+    margin-top: 20px;
+}
+td {
+    height:80px;
+    width:80px;
+    position: relative;
+    cursor: pointer;
+}
+td, .inner, .front, .back {
+    border-radius: 8px;
+}
 .inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-    -webkit-transition: -webkit-transform 0.8s;
-            transition: -webkit-transform 0.8s;
-         -o-transition: transform 0.8s;
-            transition: transform 0.8s;
-            transition: transform 0.8s, -webkit-transform 0.8s;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-}
-.flipped .inner {
-    transform: rotateY(180deg);
-}
-.front {
-    background-color: rgba(255,255,255,0.3);
-}
-
-.back {
-    background-color: rgba(255,255,255,0.5);
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 .front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    
+    backface-visibility: hidden;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 30px;        /* Adjust this as needed */
-    line-height: 1;
-    padding: 0;
+    align-items: center;
+    font-size: 34px;
 }
-.back p {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-size: 40px;
+/* Default (dark theme) */
+.front {
+    background-color: rgba(255,255,255,0.2);
 }
-button:hover, button:active {
-    outline:0;
+.back {
+    background-color: rgba(255,255,255,0.5);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 }
-td:hover .front {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.4);
-    transition: transform 0.2s, background-color 0.2s;
+/* Light theme override */
+body.light .front {
+    background-color: rgba(0,0,0,0.15);   /* soft grey for visibility */
 }
-@media (max-width: 768px) {
-    td {
-        height: 50px;
-        width: 50px;
-    }
-
-    #title {
-        font-size: 20px;
-        height: 40px;
-    }
-
-    button {
-        font-size: 20px;
-        width: 80px;
-    }
-
-    p {
-        font-size: 30px;
-    }
-    .back p {
-        font-size: 28px; /* fits nicely in 50x50 tiles */
-    }
+body.light .back {
+    background-color: rgba(0,0,0,0.35);   /* darker grey for contrast */
 }
+/* Dark mode glow */
 td.matched {
-    animation: glowPulseOnce 3.0s ease-out forwards;
+    animation: glowPulseDark 3s ease-out forwards;
 }
-@keyframes glowPulseOnce {
-    0% {
-        box-shadow: 0 0 0px 0px rgba(0, 255, 0, 0);
-    }
-    50% {
-        box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.6);
-    }
-    100% {
-        box-shadow: 0 0 0px 0px rgba(0, 255, 0, 0);
-    }
+@keyframes glowPulseDark {
+    0%   { box-shadow: 0 0 0px 0px rgba(0, 255, 0, 0); }
+    50%  { box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.6); }
+    100% { box-shadow: 0 0 0px 0px rgba(0, 255, 0, 0); }
+}
+
+/* Light mode glow */
+body.light td.matched {
+    animation: glowPulseLight 3s ease-out forwards;
+}
+@keyframes glowPulseLight {
+    0%   { box-shadow: 0 0 0px 0px rgba(0, 120, 255, 0); }
+    50%  { box-shadow: 0 0 20px 10px rgba(0, 120, 255, 0.6); }
+    100% { box-shadow: 0 0 0px 0px rgba(0, 120, 255, 0); }
+}
+#ol {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    color:white;
+    z-index: 3;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+#inst {
+    background: rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:12px;
+}
+#inst button {
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 25px;
+    border-radius: 8px;
+    border:none;
+    background: rgba(255,255,255,0.25);
+    color: inherit;
+    cursor:pointer;
+}
+#inst button:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.05);
+}
+
+#leaderboard {
+    margin-top:30px;
+    padding:15px;
+    background: rgba(255,255,255,0.1);
+    border-radius:12px;
+    width: 90%;
+    max-width:400px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#leaderboard h3 {
+    margin:0 0 10px 0;
+}
+#scoresList {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+#scoresList li {
+    padding:4px;
+    font-size:20px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+@media (max-width: 768px) {
+    td { width: 55px; height: 55px; }
+    .front, .back { font-size: 24px; }
 }

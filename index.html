@@ -5,26 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matching Tiles</title>
-    <link rel="icon" type="image/jpg" href="Images/fevicon.png"/>
+    <link rel="icon" type="image/png" href="Images/fevicon.png"/>
     <link rel="stylesheet" href="gameStyle.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
-    <script src="gameScript.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="gameScript.js" defer></script>
 </head>
-    
 <body>
-    <div id="ol"> </div>
-    <div style="height: 8px;"></div>
+    <div id="ol"></div>
+
     <div id="title">
-    <span id="logo">Matching Tiles</span>
+        <span id="logo">🎮 Matching Tiles!</span>
+        <div id="controls">
+            <button id="pauseBtn">⏸ Pause</button>
+            <button id="restartBtn">↺ Restart</button>
+            <button id="themeToggle">🌙 Dark/Light</button>
+        </div>
     </div>
 
-    <div id="title" style="height: 40px;">
+    <div id="hud">
         <span id="moves"></span>
         <span id="time"></span>
+    </div>
+
+    <div id="progressBarContainer">
+        <div id="progressBar"></div>
     </div>
 
     <center>
         <table cellspacing="0"></table>
     </center>
+
+    <div id="leaderboard">
+        <h3>🏆 High Scores</h3>
+        <ul id="scoresList"></ul>
+    </div>
 </body>
 </html>
